@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Programa de criadores da Slap Publicidade. Inscreva-se para parcerias de divulgação com marcas.">
+<meta property="og:title" content="Slap Publicidade · Programa de Criadores">
+<meta property="og:description" content="Sua habilidade, seu lucro. Inscreva-se em 2 minutos.">
+<meta name="theme-color" content="#f3efe6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237d6450'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial' font-weight='900' font-size='38' text-anchor='middle' fill='%23f3efe6'%3ES%3C/text%3E%3C/svg%3E">
+<title>Slap Publicidade · Programa de Criadores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3efe6; --surface:#fbf9f4; --ink:#26221d; --muted:#7a7166; --line:#ddd5c6;
+  --brown:#7d6450; --sage:#6c7c58; --sage-soft:#e3e7d9; --danger:#a5452f;
+  --shadow:0 1px 0 rgba(0,0,0,.03),0 18px 40px -24px rgba(60,45,30,.35);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#171512; --surface:#211e1a; --ink:#f0ebe1; --muted:#a59c8f; --line:#38332c;
+  --brown:#c9ab90; --sage:#a3b58c; --sage-soft:#2b3124; --danger:#e08a72;
+  --shadow:0 18px 40px -24px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --bg:#171512; --surface:#211e1a; --ink:#f0ebe1; --muted:#a59c8f; --line:#38332c;
+  --brown:#c9ab90; --sage:#a3b58c; --sage-soft:#2b3124; --danger:#e08a72;
+  --shadow:0 18px 40px -24px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.logo{font:900 26px/1 Archivo,sans-serif;letter-spacing:-.04em;color:var(--brown)}
+.label{font:600 11px/1.2 Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+/* hero */
+.hero{display:grid;gap:48px;padding:40px 0 64px;align-items:center}
+@media(min-width:900px){.hero{grid-template-columns:1.15fr .85fr;padding:72px 0 96px}}
+.kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:26px}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--sage);display:inline-block}
+h1{font:800 clamp(40px,6.6vw,80px)/.95 Archivo,sans-serif;letter-spacing:-.045em;margin:0 0 40px}
+h1 em{font-style:normal;color:var(--sage)}
+h1 .ser{font:italic 400 1.04em/1 "Instrument Serif",serif;letter-spacing:-.01em;color:var(--brown)}
+.lead{font-size:18px;color:var(--muted);max-width:520px;margin:0 0 34px}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.btn{appearance:none;border:0;cursor:pointer;background:var(--ink);color:var(--bg);font:700 16px Archivo,sans-serif;padding:18px 28px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;transition:transform .15s ease,opacity .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
+.btn .arr{display:inline-block;transition:transform .2s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.meta{font-size:13px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line)}
+.stats div{padding:18px 14px 0 0}
+.stats b{display:block;font:800 18px/1.2 Archivo,sans-serif;letter-spacing:-.02em;margin-top:6px}
+/* dossier card */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.card .ring{position:absolute;right:-60px;top:-60px;width:200px;height:200px;border:1px solid var(--line);border-radius:50%}
+.card .ring.b{right:-20px;top:-20px;width:120px;height:120px}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;position:relative}
+.avatar{width:54px;height:54px;border-radius:16px;background:var(--sage);color:var(--surface);display:grid;place-items:center;font:800 22px Archivo,sans-serif}
+.neq{font:300 34px/1 Archivo,sans-serif;color:var(--brown)}
+.card h3{font:800 24px/1.1 Archivo,sans-serif;letter-spacing:-.03em;margin:14px 0 2px;word-break:break-word}
+.card .handle{color:var(--muted);font-size:14px;margin-bottom:20px;word-break:break-all}
+.rows{display:grid;gap:0}
+.row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px dashed var(--line);font-size:14px}
+.row span:first-child{color:var(--muted)}
+.row span:last-child{font-weight:600;text-align:right}
+.pill{display:inline-block;background:var(--sage-soft);color:var(--sage);font:700 11px Inter;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:6px 10px}
+.score{margin-top:18px}
+.bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:8px}
+.bar i{display:block;height:100%;background:var(--sage);border-radius:6px;transition:width .5s ease}
+/* form */
+.form-shell{display:grid;gap:40px;padding:24px 0 80px}
+@media(min-width:960px){.form-shell{grid-template-columns:1fr 360px;gap:64px;padding-top:40px}}
+.progress{display:flex;align-items:center;gap:16px;margin-bottom:44px}
+.progress .bar{flex:1;margin:0;height:4px}
+.step{animation:in .4s cubic-bezier(.2,.8,.2,1)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.q{font:800 clamp(30px,4.6vw,48px)/1.04 Archivo,sans-serif;letter-spacing:-.04em;margin:14px 0 12px}
+.q em{font-style:normal;color:var(--sage)}
+.hint{color:var(--muted);margin:0 0 30px;max-width:560px}
+.field{width:100%;background:transparent;border:0;border-bottom:2px solid var(--line);color:var(--ink);font:600 clamp(22px,3.2vw,30px)/1.3 Archivo,sans-serif;padding:10px 0 12px;outline:none;border-radius:0;transition:border-color .2s}
+.field:focus{border-color:var(--sage)}
+.field::placeholder{color:var(--line)}
+.prefix{display:flex;align-items:baseline;gap:6px}
+.prefix span{font:600 clamp(22px,3.2vw,30px) Archivo,sans-serif;color:var(--muted)}
+.two{display:grid;gap:28px}
+@media(min-width:640px){.two{grid-template-columns:2fr 1fr}}
+.small-label{display:block;margin-bottom:4px}
+.err{color:var(--danger);font-size:14px;min-height:22px;margin-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{appearance:none;cursor:pointer;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:11px 18px;font:600 15px Inter,sans-serif;transition:all .15s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--sage);border-color:var(--sage);color:var(--surface)}
+.opts{display:grid;gap:10px;max-width:620px}
+.opt{appearance:none;cursor:pointer;text-align:left;display:flex;align-items:center;gap:16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:17px 20px;font:600 17px Inter,sans-serif;transition:all .15s}
+.opt:hover{border-color:var(--ink)}
+.opt .k{flex:none;width:28px;height:28px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;font:700 12px Inter;color:var(--muted)}
+.opt small{display:block;font-weight:400;color:var(--muted);font-size:14px;margin-top:2px}
+.opt[aria-pressed="true"]{border-color:var(--sage);background:var(--sage-soft)}
+.opt[aria-pressed="true"] .k{background:var(--sage);border-color:var(--sage);color:var(--surface)}
+.consent{display:flex;gap:12px;align-items:flex-start;margin-top:26px;font-size:14px;color:var(--muted);max-width:620px;cursor:pointer}
+.consent input{width:18px;height:18px;accent-color:var(--sage);margin-top:2px;flex:none}
+.nav{display:flex;align-items:center;gap:14px;margin-top:40px;flex-wrap:wrap}
+.back{background:none;border:0;color:var(--muted);font:600 15px Inter;cursor:pointer;padding:12px 4px}
+.back:hover{color:var(--ink)}
+.enter{font-size:13px;color:var(--muted)}
+.enter kbd{font:600 11px Inter;border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+.side{display:none}
+@media(min-width:960px){.side{display:block;position:sticky;top:24px;align-self:start}}
+/* thanks */
+.thanks{padding:64px 0 96px;max-width:720px}
+.check{width:64px;height:64px;border-radius:50%;background:var(--sage);color:var(--surface);display:grid;place-items:center;margin-bottom:30px}
+.next{display:grid;gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.next div{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.next b{font:800 14px Archivo;color:var(--sage);min-width:28px}
+.notice{margin-top:26px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:var(--surface);font-size:14px}
+.notice .btn{margin-top:14px;padding:13px 20px;font-size:14px}
+footer{border-top:1px solid var(--line);padding:22px 0 30px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+[hidden]{display:none!important}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo">SLAP.</div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <span class="label" id="topLabel">Programa de criadores</span>
+    </div>
+  </header>
+
+  <!-- LANDING -->
+  <main id="landing">
+    <section class="hero">
+      <div>
+        <div class="kicker label"><i></i>Programa de influenciadores · 2026</div>
+        <h1><span style="white-space:nowrap">Sua habilidade,</span><br><em>seu lucro.</em></h1>
+        <div class="cta-row">
+          <button class="btn" id="startBtn">Iniciar inscrição <span class="arr">→</span></button>
+        </div>
+      </div>
+      <aside class="card" aria-label="Exemplo de dossiê">
+        <div class="ring"></div><div class="ring b"></div>
+        <div class="card-head">
+          <span class="label">Dossiê do criador</span>
+          <span class="neq">≠</span>
+        </div>
+        <div class="avatar">M</div>
+        <h3>Marina Costa</h3>
+        <div class="handle">@marinacosta · Salvador, BA</div>
+        <div class="rows">
+          <div class="row"><span>Segmento</span><span>Beleza · Lifestyle</span></div>
+          <div class="row"><span>Seguidores</span><span>Mais de 20 mil</span></div>
+          <div class="row"><span>Views nos stories</span><span>Acima de 10 mil</span></div>
+          <div class="row"><span>Modelo</span><span>Ambos</span></div>
+        </div>
+        <div class="score"><div style="display:flex;justify-content:space-between"><span class="label">Potencial</span><span class="pill">Alto</span></div><div class="bar"><i style="width:82%"></i></div></div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- FORM -->
+  <main id="formView" hidden>
+    <div class="form-shell">
+      <div>
+        <div class="progress">
+          <span class="label" id="stepLabel">Etapa 01 / 08</span>
+          <div class="bar"><i id="progBar" style="width:12.5%"></i></div>
+        </div>
+        <form id="form" novalidate>
+          <div id="stepHost"></div>
+          <div class="err" id="err" role="alert"></div>
+          <div class="nav">
+            <button type="submit" class="btn" id="nextBtn">Continuar <span class="arr">→</span></button>
+            <button type="button" class="back" id="backBtn">← Voltar</button>
+            <span class="enter" id="enterHint">ou pressione <kbd>Enter ↵</kbd></span>
+          </div>
+        </form>
+      </div>
+      <aside class="side">
+        <div class="card">
+          <div class="ring"></div><div class="ring b"></div>
+          <div class="card-head"><span class="label">Seu dossiê</span><span class="neq">≠</span></div>
+          <div class="avatar" id="dAvatar">?</div>
+          <h3 id="dName">Seu nome</h3>
+          <div class="handle" id="dHandle">@seuperfil</div>
+          <div class="rows">
+            <div class="row"><span>Segmento</span><span id="dNicho">—</span></div>
+            <div class="row"><span>Seguidores</span><span id="dSeg">—</span></div>
+            <div class="row"><span>Views nos stories</span><span id="dViews">—</span></div>
+            <div class="row"><span>Modelo</span><span id="dModelo">—</span></div>
+          </div>
+          <div class="score"><span class="label">Perfil completo</span><div class="bar"><i id="dBar" style="width:0%"></i></div></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- THANKS -->
+  <main id="thanks" hidden>
+    <section class="thanks">
+      <div class="check"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <span class="label">Inscrição recebida</span>
+      <h1 style="font-size:clamp(40px,6vw,68px);margin-top:14px">Obrigado, <em id="tName">criador</em>.</h1>
+      <p class="lead">Recebemos seu perfil. Nossa equipe analisa cada inscrição manualmente para encontrar as marcas certas para o seu público.</p>
+      <div id="fallback" class="notice" hidden></div>
+      <div class="next">
+        <div><b>01</b><span>Analisamos seu perfil, nicho e engajamento.</span></div>
+        <div><b>02</b><span>A Slap entra em contato pelo WhatsApp que você informou.</span></div>
+        <div><b>03</b><span>Apresentamos as marcas e o modelo de parceria ideal para você.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="label">Slap Publicidade</span>
+    <span class="label">≠ marcas · criadores · resultado</span>
+  </footer>
+</div>
+
+<script>
+// ===== CONFIGURAÇÃO =====
+// URL do Web App do Google Apps Script (veja apps-script/Code.gs e o README).
+const SHEETS_URL = "";
+// WhatsApp da agência (55 + DDD + número, só dígitos). Reserva caso o envio para a planilha falhe.
+const AGENCY_WA = "";
+
+const NICHOS = ["Beleza","Moda","Fitness","Lifestyle","Maternidade","Gastronomia","Viagens","Negócios","Finanças","Tecnologia","Games","Humor","Pets","Outro"];
+const SEG = [["Menos de 2 mil",""],["5 mil a 10 mil",""],["Mais de 10 mil",""],["Mais de 20 mil",""]];
+const VIEWS = [["Até 2 mil",""],["Acima de 6 mil",""],["Acima de 10 mil",""]];
+const MODELOS = [["Valor fixo","Cachê definido por publicação"],["Comissão","Até 50% sobre cada venda gerada"],["Ambos","Valor fixo + comissão"]];
+
+const A = {nome:"",instagram:"",whatsapp:"",cidade:"",uf:"",nichos:[],seguidores:"",views:"",modelo:""};
+
+const STEPS = [
+  {k:"nome", q:'Como você <em>se chama?</em>', hint:"Seu nome completo, como você quer ser chamado pela nossa equipe.",
+   render:()=>`<input class="field" id="f" autocomplete="name" placeholder="Digite seu nome" value="${esc(A.nome)}">`,
+   read:()=>{A.nome=val("f")}, check:()=>A.nome.length>=3||"Informe seu nome completo."},
+  {k:"instagram", q:'Qual é o seu <em>@ no Instagram?</em>', hint:"Vamos olhar seu perfil, conteúdo e engajamento antes de entrar em contato.",
+   render:()=>`<div class="prefix"><span>@</span><input class="field" id="f" autocapitalize="off" autocomplete="off" placeholder="seuperfil" value="${esc(A.instagram)}"></div>`,
+   read:()=>{A.instagram=val("f").replace(/^@+/,"").replace(/.*instagram\.com\//,"").replace(/[/?].*$/,"").trim()},
+   check:()=>/^[A-Za-z0-9._]{2,30}$/.test(A.instagram)||"Digite um @ válido (letras, números, ponto ou _)."},
+  {k:"whatsapp", q:'Seu <em>WhatsApp</em> com DDD', hint:"É por aqui que a Slap vai falar com você.",
+   render:()=>`<input class="field" id="f" inputmode="tel" autocomplete="tel" placeholder="(71) 99999-9999" value="${esc(A.whatsapp)}">`,
+   after:()=>{const f=document.getElementById("f");f.addEventListener("input",()=>{f.value=maskPhone(f.value)})},
+   read:()=>{A.whatsapp=val("f")}, check:()=>{const d=A.whatsapp.replace(/\D/g,"");return (d.length===10||d.length===11)||"Informe DDD + número (10 ou 11 dígitos)."}},
+  {k:"cidade", q:'De onde você <em>cria conteúdo?</em>', hint:"Algumas marcas buscam criadores de regiões específicas.",
+   render:()=>`<div class="two"><label><span class="label small-label">Cidade</span><input class="field" id="f" placeholder="Sua cidade" value="${esc(A.cidade)}"></label><label><span class="label small-label">Estado</span><input class="field" id="f2" maxlength="2" placeholder="UF" style="text-transform:uppercase" value="${esc(A.uf)}"></label></div>`,
+   read:()=>{A.cidade=val("f");A.uf=val("f2").toUpperCase()},
+   check:()=>A.cidade.length<2?"Informe sua cidade.":(!/^[A-Z]{2}$/.test(A.uf)?"Informe a sigla do estado (ex: BA).":true)},
+  {k:"nichos", q:'Qual é o seu <em>nicho?</em>', hint:"Escolha até 3 temas que mais aparecem no seu conteúdo.",
+   render:()=>`<div class="chips">${NICHOS.map(n=>`<button type="button" class="chip" data-v="${n}" aria-pressed="${A.nichos.includes(n)}">${n}</button>`).join("")}</div>`,
+   after:()=>multi(".chip","nichos",3), read:()=>{}, check:()=>A.nichos.length>0||"Escolha pelo menos um nicho."},
+  {k:"seguidores", q:'Quantos <em>seguidores</em> você tem?', hint:"Considere sua principal rede social.",
+   render:()=>opts(SEG,"seguidores"), after:()=>single("seguidores"), read:()=>{}, check:()=>!!A.seguidores||"Selecione uma faixa."},
+  {k:"views", q:'Quantas <em>views</em> seus stories têm?', hint:"A média de visualizações por story nos últimos 7 dias.",
+   render:()=>opts(VIEWS,"views"), after:()=>single("views"), read:()=>{}, check:()=>!!A.views||"Selecione uma faixa."},
+  {k:"modelo", q:'Qual <em>modelo de parceria</em> você prefere?', hint:"Isso nos ajuda a indicar as campanhas certas para você.",
+   render:()=>`<div class="opts">${MODELOS.map((m,i)=>`<button type="button" class="opt" data-v="${m[0]}" aria-pressed="${A.modelo===m[0]}"><span class="k">${"ABC"[i]}</span><span>${m[0]}<small>${m[1]}</small></span></button>`).join("")}</div>`,
+   after:()=>single("modelo",true), read:()=>{}, check:()=>!!A.modelo||"Selecione um modelo."}
+];
+
+let cur = 0, sending = false;
+const UTM = Object.fromEntries([...new URLSearchParams(location.search)].filter(([k])=>/^(utm_|fbclid|src)/.test(k)));
+const $ = id => document.getElementById(id);
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function val(id){const e=$(id);return e?e.value.trim():""}
+function maskPhone(v){const d=v.replace(/\D/g,"").slice(0,11);if(d.length<=2)return d.length?`(${d}`:"";if(d.length<=6)return`(${d.slice(0,2)}) ${d.slice(2)}`;if(d.length<=10)return`(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}`;return`(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`}
+function opts(list,key){return`<div class="opts">${list.map((o,i)=>`<button type="button" class="opt" data-v="${o[0]}" aria-pressed="${A[key]===o[0]}"><span class="k">${"ABCDEF"[i]}</span><span>${o[0]}</span></button>`).join("")}</div>`}
+function single(key,noAuto){document.querySelectorAll("#stepHost .opt").forEach(b=>b.addEventListener("click",()=>{A[key]=b.dataset.v;document.querySelectorAll("#stepHost .opt").forEach(x=>x.setAttribute("aria-pressed",x===b));$("err").textContent="";dossier();if(!noAuto)setTimeout(()=>{if(STEPS[cur].k===key)go(1)},260)}))}
+function multi(sel,key,max){document.querySelectorAll("#stepHost "+sel).forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.v,arr=A[key];const i=arr.indexOf(v);if(i>=0)arr.splice(i,1);else{if(arr.length>=max){$("err").textContent=`Escolha no máximo ${max}.`;return}arr.push(v)}b.setAttribute("aria-pressed",arr.includes(v));$("err").textContent="";dossier()}))}
+
+function show(view){["landing","formView","thanks"].forEach(v=>$(v).hidden=v!==view);window.scrollTo({top:0,behavior:"smooth"})}
+function render(){
+  const s=STEPS[cur];
+  $("stepLabel").textContent=`Etapa ${String(cur+1).padStart(2,"0")} / 08`;
+  $("progBar").style.width=((cur+1)/STEPS.length*100)+"%";
+  $("stepHost").innerHTML=`<div class="step"><span class="label">Pergunta ${cur+1}</span><h2 class="q">${s.q}</h2><p class="hint">${s.hint}</p>${s.render()}</div>`;
+  $("err").textContent="";
+  $("backBtn").style.visibility=cur===0?"hidden":"visible";
+  const last=cur===STEPS.length-1;
+  $("nextBtn").innerHTML=last?'Enviar inscrição <span class="arr">→</span>':'Continuar <span class="arr">→</span>';
+  $("enterHint").hidden=["nichos","seguidores","views","modelo"].includes(s.k);
+  s.after&&s.after();
+  const f=$("f");if(f)setTimeout(()=>f.focus({preventScroll:true}),60);
+  dossier();
+}
+function go(d){
+  const s=STEPS[cur];
+  if(d>0){s.read();const ok=s.check();if(ok!==true){$("err").textContent=ok;return}
+    if(cur===STEPS.length-1){submit();return}}
+  else s.read();
+  cur=Math.max(0,Math.min(STEPS.length-1,cur+d));render();
+}
+function dossier(){
+  $("dName").textContent=A.nome||"Seu nome";
+  $("dAvatar").textContent=(A.nome||"?").trim().charAt(0).toUpperCase()||"?";
+  $("dHandle").textContent=(A.instagram?"@"+A.instagram:"@seuperfil")+(A.cidade?` · ${A.cidade}${A.uf?", "+A.uf:""}`:"");
+  $("dNicho").textContent=A.nichos.join(" · ")||"—";
+  $("dSeg").textContent=A.seguidores||"—";
+  $("dViews").textContent=A.views||"—";
+  $("dModelo").textContent=A.modelo||"—";
+  const filled=[A.nome,A.instagram,A.whatsapp,A.cidade,A.nichos.length,A.seguidores,A.views,A.modelo].filter(Boolean).length;
+  $("dBar").style.width=(filled/8*100)+"%";
+}
+function qualifica(){return A.seguidores&&A.seguidores!=="Menos de 2 mil"&&A.views&&A.views!=="Até 2 mil"}
+function resumo(){
+  return `Olá, Slap! Quero participar do programa de criadores.\n\nNome: ${A.nome}\nInstagram: @${A.instagram}\nWhatsApp: ${A.whatsapp}\nCidade: ${A.cidade}/${A.uf}\nNicho: ${A.nichos.join(", ")}\nSeguidores: ${A.seguidores}\nViews nos stories: ${A.views}\nParceria: ${A.modelo}`;
+}
+
+async function submit(){
+  if(sending)return; sending=true;
+  const btn=$("nextBtn"); btn.disabled=true; btn.innerHTML="Enviando…";
+  const payload={nome:A.nome,instagram:"@"+A.instagram,whatsapp:A.whatsapp,cidade:A.cidade,uf:A.uf,nichos:A.nichos.join(", "),seguidores:A.seguidores,views:A.views,modelo:A.modelo,dentroDoPerfil:qualifica()?"Sim":"Não",origem:Object.entries(UTM).map(([k,v])=>k+"="+v).join("&"),enviadoEm:new Date().toISOString()};
+  let saved=false;
+  if(SHEETS_URL){
+    for(let i=0;i<2&&!saved;i++){
+      try{await fetch(SHEETS_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});saved=true}
+      catch(_){await new Promise(r=>setTimeout(r,800))}
+    }
+  }
+  btn.disabled=false; sending=false;
+  $("tName").textContent=A.nome.split(" ")[0]||"criador";
+  const fb=$("fallback");
+  if(!saved){
+    fb.hidden=false;
+    const msg=encodeURIComponent(resumo());
+    if(AGENCY_WA){
+      fb.innerHTML=`<b>Último passo:</b> envie suas respostas para o WhatsApp da Slap para concluir a inscrição.<br><a class="btn" target="_blank" rel="noopener" href="https://wa.me/${AGENCY_WA}?text=${msg}">Enviar pelo WhatsApp →</a>`;
+    }else{
+      fb.innerHTML=`<b>Quase lá:</b> não conseguimos registrar sua inscrição automaticamente. Copie suas respostas e envie para a Slap Publicidade.<br><button class="btn" id="copyBtn" type="button">Copiar respostas</button>`;
+      $("copyBtn").onclick=async()=>{try{await navigator.clipboard.writeText(resumo());$("copyBtn").textContent="Copiado ✓"}catch(_){$("copyBtn").textContent="Não foi possível copiar"}};
+    }
+  }else fb.hidden=true;
+  show("thanks");
+}
+
+$("startBtn").onclick=()=>{show("formView");cur=0;render()};
+$("form").addEventListener("submit",e=>{e.preventDefault();go(1)});
+$("backBtn").onclick=()=>go(-1);
+</script>
+</body>
+</html>
