@@ -234,7 +234,7 @@ src="https://www.facebook.com/tr?id=1080346988299156&ev=PageView&noscript=1"
     </section>
   </main>
 
-  <footer>
+  <footer id="foot">
     <span class="label">Slap Publicidade</span>
     <span class="label">≠ marcas · criadores · resultado</span>
   </footer>
@@ -296,7 +296,7 @@ function opts(list,key){return`<div class="opts">${list.map((o,i)=>`<button type
 function single(key,noAuto){document.querySelectorAll("#stepHost .opt").forEach(b=>b.addEventListener("click",()=>{A[key]=b.dataset.v;document.querySelectorAll("#stepHost .opt").forEach(x=>x.setAttribute("aria-pressed",x===b));$("err").textContent="";dossier();if(!noAuto)setTimeout(()=>{if(STEPS[cur].k===key)go(1)},260)}))}
 function multi(sel,key,max){document.querySelectorAll("#stepHost "+sel).forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.v,arr=A[key];const i=arr.indexOf(v);if(i>=0)arr.splice(i,1);else{if(arr.length>=max){$("err").textContent=`Escolha no máximo ${max}.`;return}arr.push(v)}b.setAttribute("aria-pressed",arr.includes(v));$("err").textContent="";dossier()}))}
 
-function show(view){["landing","formView","thanks"].forEach(v=>$(v).hidden=v!==view);toTop()}
+function show(view){["landing","formView","thanks"].forEach(v=>$(v).hidden=v!==view);$("foot").hidden=view==="formView";toTop()}
 function toTop(){window.scrollTo(0,0);requestAnimationFrame(()=>window.scrollTo(0,0))}
 const TOUCH=matchMedia("(hover:none),(pointer:coarse)").matches;
 function render(){
@@ -308,7 +308,7 @@ function render(){
   $("backBtn").style.visibility=cur===0?"hidden":"visible";
   const last=cur===STEPS.length-1;
   $("nextBtn").innerHTML=last?'Enviar inscrição <span class="arr">→</span>':'Continuar <span class="arr">→</span>';
-  $("enterHint").hidden=["nichos","seguidores","views","modelo"].includes(s.k);
+  $("enterHint").hidden=TOUCH||["nichos","seguidores","views","modelo"].includes(s.k);
   s.after&&s.after();
   toTop();
   const f=$("f");if(f&&!TOUCH)setTimeout(()=>f.focus({preventScroll:true}),60);
