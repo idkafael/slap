@@ -27,3 +27,11 @@ As respostas vão para uma planilha do Google Sheets via Google Apps Script.
 ## Rastreamento de anúncios
 Parâmetros `utm_*`, `fbclid` e `src` da URL são salvos na coluna **Origem (UTM)**.
 Ex: `https://seu-dominio.vercel.app/?utm_source=meta&utm_campaign=criadores`
+
+## Meta Pixel (1080346988299156)
+| Evento | Quando dispara |
+|---|---|
+| `PageView` | Abriu a página |
+| `IniciouInscricao` (custom) | Clicou em "Iniciar inscrição" |
+| `Lead` + `CompleteRegistration` | Enviou o formulário (otimizar a campanha por **Lead**) |
+| `LeadQualificado` (custom) | Enviou e está dentro do perfil (2k+ seguidores e views acima de 2 mil) |

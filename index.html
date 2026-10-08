@@ -124,6 +124,23 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;display:flex;justify
 [hidden]{display:none!important}
 </style>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1080346988299156');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1080346988299156&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <div class="wrap">
@@ -229,6 +246,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;display:flex;justify
 const SHEETS_URL = "";
 // WhatsApp da agência (55 + DDD + número, só dígitos). Reserva caso o envio para a planilha falhe.
 const AGENCY_WA = "";
+
+// Meta Pixel: eventos do funil (não quebra se o pixel for bloqueado)
+function px(type,name,params){try{if(window.fbq)fbq(type,name,params||{})}catch(_){}}
+let leadTracked=false;
 
 const NICHOS = ["Beleza","Moda","Fitness","Lifestyle","Maternidade","Gastronomia","Viagens","Negócios","Finanças","Tecnologia","Games","Humor","Pets","Outro"];
 const SEG = [["Menos de 2 mil",""],["5 mil a 10 mil",""],["Mais de 10 mil",""],["Mais de 20 mil",""]];
@@ -337,10 +358,17 @@ async function submit(){
       $("copyBtn").onclick=async()=>{try{await navigator.clipboard.writeText(resumo());$("copyBtn").textContent="Copiado ✓"}catch(_){$("copyBtn").textContent="Não foi possível copiar"}};
     }
   }else fb.hidden=true;
+  if(!leadTracked){
+    leadTracked=true;
+    const params={content_name:"Inscrição Criadores Slap",content_category:A.nichos[0]||"",seguidores:A.seguidores,views:A.views,modelo:A.modelo};
+    px("track","Lead",params);
+    px("track","CompleteRegistration",params);
+    if(qualifica())px("trackCustom","LeadQualificado",params);
+  }
   show("thanks");
 }
 
-$("startBtn").onclick=()=>{show("formView");cur=0;render()};
+$("startBtn").onclick=()=>{px("trackCustom","IniciouInscricao");show("formView");cur=0;render()};
 $("form").addEventListener("submit",e=>{e.preventDefault();go(1)});
 $("backBtn").onclick=()=>go(-1);
 </script>
